@@ -2,15 +2,15 @@ import csv
 import boto3
 import pymysql
 
-# Datos de conexion a la base de datos MySQL (reemplazar host por el endpoint del RDS)
-host = "REEMPLAZAR-ENDPOINT-RDS"
+# Datos de conexion a la base de datos MySQL (contenedor "mysql-db" en la misma red Docker)
+host = "mysql-db"
 usuario = "admin"
 password = "IngestaS3_2025"
 baseDatos = "ingesta_db"
 tabla = "personas"
 
 ficheroUpload = "data.csv"
-nombreBucket = "gcr-output-02"
+nombreBucket = "gcr-output-02-mx"
 
 # 1. Conectarse a MySQL y leer todos los registros de la tabla
 conexion = pymysql.connect(host=host, user=usuario, password=password, database=baseDatos)
